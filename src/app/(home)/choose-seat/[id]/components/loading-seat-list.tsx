@@ -7,24 +7,36 @@ export default function LoadingSeatList() {
       <div className="flex gap-5">
         <div className="flex flex-col gap-[19px]">
           {[0, 1, 2, 3, 4].map((val) => (
-            <Skeleton key={val} className="w-[60px] h-[60px] rounded-xl" />
+            <Skeleton
+              key={val}
+              className="w-[60px] h-[60px] bg-white rounded-xl"
+            />
           ))}
         </div>
         <div className="flex flex-col gap-[19px]">
           {[0, 1, 2, 3, 4].map((val) => (
-            <Skeleton key={val} className="w-[60px] h-[60px] rounded-xl" />
+            <Skeleton
+              key={val}
+              className="w-[60px] h-[60px] bg-white rounded-xl"
+            />
           ))}
         </div>
       </div>
       <div className="flex gap-5">
         <div className="flex flex-col gap-[19px]">
           {[0, 1, 2, 3, 4].map((val) => (
-            <Skeleton key={val} className="w-[60px] h-[60px] rounded-xl" />
+            <Skeleton
+              key={val}
+              className="w-[60px] h-[60px] bg-white rounded-xl"
+            />
           ))}
         </div>
         <div className="flex flex-col gap-[19px]">
           {[0, 1, 2, 3, 4].map((val) => (
-            <Skeleton key={val} className="w-[60px] h-[60px] rounded-xl" />
+            <Skeleton
+              key={val}
+              className="w-[60px] h-[60px] bg-white rounded-xl"
+            />
           ))}
         </div>
       </div>
