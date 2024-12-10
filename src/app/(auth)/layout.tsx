@@ -1,20 +1,20 @@
 import type { Metadata } from "next"
-// import localFont from "next/font/local"
+import localFont from "next/font/local"
 import "../globals.css"
 import Navbar from "../components/Navbar"
 import CompanyLogos from "../components/CompanyLogos"
 
-// const geistSans = localFont({
-//   src: "../../fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// })
+const geistSans = localFont({
+  src: "../fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+})
 
-// const geistMono = localFont({
-//   src: "../../fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// })
+const geistMono = localFont({
+  src: "../fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+})
 
 export const metadata: Metadata = {
   title: "Sign Up | Sign In",
@@ -27,7 +27,9 @@ export default function AuthRootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`text-white font-poppins bg-flysha-black`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} text-white font-poppins bg-flysha-black`}
+      >
         <section
           id="Signup"
           className="bg-[url('/assets/images/background/airplane.png')] bg-no-repeat bg-cover bg-left-top -z-10 min-h-screen"

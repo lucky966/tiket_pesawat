@@ -35,9 +35,7 @@ export default async function DashboardLayout({
   }
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} `}>
         <section>
           <nav className="border-b border-muted p-5">
             <div className="flex flex-row items-center justify-beetwen">
