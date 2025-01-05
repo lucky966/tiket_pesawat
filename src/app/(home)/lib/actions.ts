@@ -11,10 +11,11 @@ export async function logout(): Promise<{ error: string } | null> {
 
   if (!session) {
     return {
-      error: "Unauthorized",
+      error: "UnAuthorized",
     }
   }
-  await lucia.invalidateUserSessions(session.id)
+
+  await lucia.invalidateSession(session.id)
 
   const sessionCookie = lucia.createBlankSessionCookie()
 
@@ -23,6 +24,7 @@ export async function logout(): Promise<{ error: string } | null> {
     sessionCookie.value,
     sessionCookie.attributes
   )
+
   revalidatePath("/")
   return redirect("/")
 }

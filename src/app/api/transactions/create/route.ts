@@ -30,23 +30,40 @@ export async function POST(request: NextRequest) {
     })
     // handle untuk midtrans
 
-    const parameter = {
-      transaction_detail: {
-        order_id: transaction.id,
-        gross_amount: body.price,
+    // const parameter = {
+    //   transaction_detail: {
+    //     order_id: transaction.id,
+    //     gross_amount: body.price,
+    //   },
+    //   credit_card: {
+    //     secure: true,
+    //   },
+    //   item_details: [
+    //     {
+    //       id: body.flightId,
+    //       price: body.price,
+    //       quantity: 1,
+    //       name: `Tiket Pesawat ${body.departureCityCode} - ${body.destinationCityCode}`,
+    //     },
+    //   ],
+    // }
+
+    let parameter = {
+      transaction_details: {
+        order_id: "YOUR-ORDERID-123456",
+        gross_amount: 10000,
       },
       credit_card: {
         secure: true,
       },
-      item_details: [
-        {
-          id: body.flightId,
-          price: body.price,
-          quantity: 1,
-          name: `Tiket Pesawat ${body.departureCityCode} - ${body.destinationCityCode}`,
-        },
-      ],
+      customer_details: {
+        first_name: "budi",
+        last_name: "pratama",
+        email: "budi.pra@example.com",
+        phone: "08111222333",
+      },
     }
+
     console.log(parameter)
 
     const resMidtrans = await fetch(MIDTRANS_URL, {

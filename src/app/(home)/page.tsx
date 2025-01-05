@@ -18,39 +18,40 @@ export default async function HomePage() {
       >
         <div className="Header-content bg-gradient-to-r from-[#080318] to-[rgba(8,3,24,0)] z=0">
           <Navbar />
-          <div className="hero-section container max-w-[1130px] w-full mx-auto flex flex-col gap-[90px] mt-[103px]">
-            <div className="title flex flex-col gap-[30px]">
-              <h1 className="font-extrabold text-[80px] leading-[90px]">
+          <div className="hero-section container max-w-[1130px] w-full mx-auto flex flex-col gap-10 mt-10 px-4 sm:mt-16 sm:gap-14 md:mt-20 md:gap-20 lg:mt-[103px] lg:gap-[90px]">
+            <div className="title flex flex-col gap-4 text-center sm:gap-6 md:gap-8 lg:gap-[30px] lg:text-left">
+              <h1 className="font-extrabold text-4xl leading-tight sm:text-5xl sm:leading-[60px] md:text-6xl md:leading-[70px] lg:text-[80px] lg:leading-[90px]">
                 Best Flights. <br />
                 Cheaper Budget.
               </h1>
-              <p className="font-medium text-lg leading-[36px]">
+              <p className="font-medium text-base leading-[28px] sm:text-lg sm:leading-[32px] md:leading-[36px]">
                 No more long queue, get more delicious heavy meals. <br />
                 Crafted by best talented people around the world.
               </p>
             </div>
             <form
               action={searchFlight}
-              className="bg-white text-flysha-black w-full flex justify-between items-center rounded-[20px] p-5"
+              className="bg-white text-flysha-black w-full flex flex-col gap-4 rounded-[20px] p-5 sm:flex-row sm:gap-8 sm:items-center md:p-6 lg:p-5 lg:gap-[50px]"
             >
-              <div className="flex gap-[50px] items-center p-5">
-                <div className="flex flex-col justify-center gap-[14px]">
-                  <label htmlFor="departure" className="text-lg">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                <div className="flex flex-col justify-center gap-2">
+                  <label
+                    htmlFor="departure"
+                    className="text-sm sm:text-base md:text-lg"
+                  >
                     Departure
                   </label>
-                  <div className="flex gap-[10px]">
-                    <div className="flex items-center w-8 h-8 shrink-0">
-                      <Image
-                        width={150}
-                        height={60}
-                        src="/assets/images/icons/airplane.svg"
-                        alt="icon"
-                      />
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      width={24}
+                      height={24}
+                      src="/assets/images/icons/airplane.svg"
+                      alt="icon"
+                    />
                     <select
                       name="departure"
                       id="departure"
-                      className="font-semibold text-[22px] leading-[26.63px] appearance-none bg-[url(/assets/images/icons/arrow-down.svg)] bg-no-repeat bg-[right_1px] pr-[30px]"
+                      className="font-semibold text-sm sm:text-base md:text-lg appearance-none bg-transparent pr-6"
                     >
                       <option value="" disabled selected>
                         Departure
@@ -63,24 +64,25 @@ export default async function HomePage() {
                     </select>
                   </div>
                 </div>
-                <hr className="border border-[#EDE8F5] h-[60px]" />
-                <div className="flex flex-col justify-center gap-[14px]">
-                  <label htmlFor="arrival" className="text-lg">
+                <hr className="hidden sm:block border border-[#EDE8F5] h-[60px]" />
+                <div className="flex flex-col justify-center gap-2">
+                  <label
+                    htmlFor="arrival"
+                    className="text-sm sm:text-base md:text-lg"
+                  >
                     Arrival
                   </label>
-                  <div className="flex gap-[10px]">
-                    <div className="flex items-center w-8 h-8 shrink-0">
-                      <Image
-                        width={150}
-                        height={60}
-                        src="/assets/images/icons/airplane.svg"
-                        alt="icon"
-                      />
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      width={24}
+                      height={24}
+                      src="/assets/images/icons/airplane.svg"
+                      alt="icon"
+                    />
                     <select
                       name="arrival"
                       id="arrival"
-                      className="font-semibold text-[22px] leading-[26.63px] appearance-none bg-[url(/assets/images/icons/arrow-down.svg)] bg-no-repeat bg-[right_1px] pr-[30px]"
+                      className="font-semibold text-sm sm:text-base md:text-lg appearance-none bg-transparent pr-6"
                     >
                       <option value="" disabled selected>
                         Arrival
@@ -93,32 +95,33 @@ export default async function HomePage() {
                     </select>
                   </div>
                 </div>
-                <hr className="border border-[#EDE8F5] h-[60px]" />
-                <div className="flex flex-col justify-center gap-[14px]">
-                  <label htmlFor="date" className="text-lg">
+                <hr className="hidden sm:block border border-[#EDE8F5] h-[60px]" />
+                <div className="flex flex-col justify-center gap-2">
+                  <label
+                    htmlFor="date"
+                    className="text-sm sm:text-base md:text-lg"
+                  >
                     Departure Date
                   </label>
-                  <div className="flex gap-[10px]">
-                    <div className="flex items-center w-8 h-8 shrink-0">
-                      <Image
-                        width={150}
-                        height={60}
-                        src="/assets/images/icons/calendar.svg"
-                        alt="icon"
-                      />
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      width={24}
+                      height={24}
+                      src="/assets/images/icons/calendar.svg"
+                      alt="icon"
+                    />
                     <input
                       type="date"
                       name="date"
                       id="date"
-                      className="relative font-semibold text-[22px] leading-[26.63px] w-[157px] bg-transparent focus:outline-none appearance-none [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:opacity-0"
+                      className="relative font-semibold text-sm sm:text-base md:text-lg bg-transparent focus:outline-none appearance-none pr-6"
                     />
                   </div>
                 </div>
               </div>
               <button
                 type="submit"
-                className="font-bold text-2xl leading-9 text-flysha-black text-center bg-flysha-light-purple rounded-[18px] p-[12px_30px] flex shrink-0 items-center h-[108px]  transition-all duration-300 hover:shadow-[0_10px_20px_0_#B88DFF]"
+                className="font-bold text-base sm:text-lg md:text-xl leading-6 text-flysha-black text-center bg-flysha-light-purple rounded-[18px] p-3 transition-all duration-300 hover:shadow-[0_10px_20px_0_#B88DFF]"
               >
                 Explore Now
               </button>
@@ -127,6 +130,7 @@ export default async function HomePage() {
           <CompanyLogos />
         </div>
       </section>
+
       {/* service */}
       <section
         id="Services"

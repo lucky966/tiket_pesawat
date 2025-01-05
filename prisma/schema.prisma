@@ -8,23 +8,6 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-enum RoleUser {
-  ADMIN
-  CUSTOMER
-}
-
-enum TypeSeat {
-  ECONOMY
-  BUSINESS
-  FIRST
-}
-
-enum StatusTicket {
-  PENDING
-  SUCCESS
-  FAILED
-}
-
 model User {
   id       String    @id @default(cuid())
   name     String
@@ -53,7 +36,6 @@ model Airplane {
 
 model Flight {
   id                  String       @id @default(cuid())
-  plane               Airplane     @relation(fields: [planeId], references:[id])
   planeId             String
   departureDate       DateTime
   departureCity       String
@@ -62,17 +44,18 @@ model Flight {
   destinationCity     String
   destinationCityCode String
   price               Int
+  plane               Airplane     @relation(fields: [planeId], references: [id])
   seats               FlightSeat[]
   tickets             Ticket[]
 }
 
 model FlightSeat {
   id         String   @id @default(cuid())
-  flight     Flight   @relation(fields: [flightId], references: [id])
   flightId   String
   seatNumber String
   isBooked   Boolean? @default(false)
   type       TypeSeat
+  flight     Flight   @relation(fields: [flightId], references: [id])
   tickets    Ticket?
 }
 
@@ -82,11 +65,28 @@ model Ticket {
   bookingDate   DateTime
   status        StatusTicket
   price         BigInt
-  customer      User         @relation(fields: [customerId], references: [id])
   customerId    String
-  flight        Flight       @relation(fields: [flightId], references: [id])
   flightId      String
-  seat          FlightSeat   @relation(fields: [seatId], references: [id])
   seatId        String       @unique
   tokenMidtrans String?
+  customer      User         @relation(fields: [customerId], references: [id])
+  flight        Flight       @relation(fields: [flightId], references: [id])
+  seat          FlightSeat   @relation(fields: [seatId], references: [id])
+}
+
+enum RoleUser {
+  ADMIN
+  CUSTOMER
+}
+
+enum TypeSeat {
+  ECONOMY
+  BUSINESS
+  FIRST
+}
+
+enum StatusTicket {
+  PENDING
+  SUCCESS
+  FAILED
 }
