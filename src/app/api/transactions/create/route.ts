@@ -17,9 +17,10 @@ export async function POST(request: NextRequest) {
         customerId: body.customerId,
         flightId: body.flightId,
         seatId: body.seatId,
-        code: `ASD${makeid(7)}`,
+        code: `TRX${makeid(7)}`,
       },
     })
+
     await prisma.flightSeat.update({
       where: {
         id: transaction.seatId,
@@ -28,10 +29,10 @@ export async function POST(request: NextRequest) {
         isBooked: true,
       },
     })
-    // handle untuk midtrans
 
+    // handle untuk midtrans
     const parameter = {
-      transaction_detail: {
+      transaction_details: {
         order_id: transaction.id,
         gross_amount: body.price,
       },
@@ -68,9 +69,9 @@ export async function POST(request: NextRequest) {
         tokenMidtrans: midtrans.token,
       },
     })
+    // handle untuk midtrans
 
     return Response.json({ midtrans, transaction_id: transaction.id })
-    // return transaction
   } catch (error) {
     console.log(error)
     return Response.json({ error }, { status: 500 })

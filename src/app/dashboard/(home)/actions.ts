@@ -4,6 +4,7 @@ import { getUser, lucia } from "@/lib/auth"
 import type { ActionResult } from "../(auth)/signin/form/actions"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import prisma from "../../../../lib/prisma"
 
 export async function logout(): Promise<ActionResult> {
   const { session } = await getUser()
@@ -26,3 +27,5 @@ export async function logout(): Promise<ActionResult> {
 
   return redirect("/dashboard/signin")
 }
+
+

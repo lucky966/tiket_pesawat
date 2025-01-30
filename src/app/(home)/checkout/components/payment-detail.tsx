@@ -25,7 +25,7 @@ export default function PaymentDetail({ user }: PaymentDetailProps) {
         <div className="flex justify-between">
           <span>Seat Price</span>
           <span className="font-semibold">
-            Rp{" "}
+            {" "}
             {data?.flightDetail?.price
               ? rupiahFormat(
                   data?.flightDetail?.price + selectedSeat.additionalPrice
@@ -44,7 +44,7 @@ export default function PaymentDetail({ user }: PaymentDetailProps) {
         <div className="flex justify-between">
           <span>Grand Total</span>
           <span className="font-bold text-flysha-light-purple">
-            Rp{" "}
+            {" "}
             {data?.flightDetail?.price
               ? rupiahFormat(
                   data?.flightDetail?.price + selectedSeat.additionalPrice

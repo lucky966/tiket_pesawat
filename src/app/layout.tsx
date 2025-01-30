@@ -14,7 +14,7 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "TicWat | Website Ticket Pesawat",
+  title: "Flysha | Website Ticket Pesawat",
 }
 
 export default async function RootLayout({

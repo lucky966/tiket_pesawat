@@ -18,21 +18,15 @@ export default function Navbar() {
         />
       </Link>
       <ul className="nav-menus hidden sm:flex gap-6 items-center w-fit">
-        <li>
-          <Link href="" className="font-medium text-sm sm:text-base">
-            Packages
-          </Link>
-        </li>
-        <li>
-          <Link href="" className="font-medium text-sm sm:text-base">
-            Stories
-          </Link>
-        </li>
-        <li>
-          <Link href="" className="font-medium text-sm sm:text-base">
-            About
-          </Link>
-        </li>
+        <Link href="#Services" className="font-medium text-sm sm:text-base">
+          Layanan
+        </Link>
+        <Link href="#Selected" className="font-medium text-sm sm:text-base">
+          Paket
+        </Link>
+        <Link href="#Testimonials" className="font-medium text-sm sm:text-base">
+          Testimoni
+        </Link>
         <NavbarAuth />
       </ul>
       <button
@@ -40,7 +34,7 @@ export default function Navbar() {
         aria-label="Menu"
       >
         <Image
-          src="/assets/images/icons/menu.svg"
+          src="/assets/images/icons/menu-hamburger.svg"
           alt="menu"
           width={24}
           height={24}

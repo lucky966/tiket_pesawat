@@ -101,6 +101,7 @@ export async function deleteFlight(id: string) {
   try {
     await prisma.flightSeat.deleteMany({ where: { flightId: id } })
     await prisma.flight.delete({ where: { id: id } })
+    // console.log(tes)
   } catch (error) {
     console.log(error)
   }

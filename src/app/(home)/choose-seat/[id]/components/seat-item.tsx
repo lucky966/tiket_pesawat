@@ -1,6 +1,6 @@
 "use client"
 import type { FlightSeat } from "@prisma/client"
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { SeatContext, SeatContextType } from "../providers/seat-provider"
 
 interface SeatItemProps {
@@ -9,6 +9,25 @@ interface SeatItemProps {
 
 export default function SeatItem({ seat }: SeatItemProps) {
   const { setSelectedSeat } = useContext(SeatContext) as SeatContextType
+  const [isBooked, setIsBooked] = useState(false)
+  // Fetch seat status
+  useEffect(() => {
+    const fetchSeatStatus = async () => {
+      try {
+        // Gunakan ID kursi untuk membuat URL
+        const response = await fetch(`/api/seats/${seat.id}`)
+        const data = await response.json()
+        setIsBooked(data.isBooked)
+      } catch (error) {
+        console.error("Failed to fetch seat status", error)
+      }
+    }
+
+    const interval = setInterval(fetchSeatStatus, 5000)
+    fetchSeatStatus()
+
+    return () => clearInterval(interval)
+  }, [seat.id]) // Hanya depend pada seat.id
 
   return (
     <div className="group flex shrink-0 w-[60px] h-[60px] items-center justify-center relative">

@@ -21,12 +21,13 @@ export default async function HomePage() {
           <div className="hero-section container max-w-[1130px] w-full mx-auto flex flex-col gap-10 mt-10 px-4 sm:mt-16 sm:gap-14 md:mt-20 md:gap-20 lg:mt-[103px] lg:gap-[90px]">
             <div className="title flex flex-col gap-4 text-center sm:gap-6 md:gap-8 lg:gap-[30px] lg:text-left">
               <h1 className="font-extrabold text-4xl leading-tight sm:text-5xl sm:leading-[60px] md:text-6xl md:leading-[70px] lg:text-[80px] lg:leading-[90px]">
-                Best Flights. <br />
-                Cheaper Budget.
+                Penerbangan
+                <br />
+                Terbaik.
               </h1>
               <p className="font-medium text-base leading-[28px] sm:text-lg sm:leading-[32px] md:leading-[36px]">
-                No more long queue, get more delicious heavy meals. <br />
-                Crafted by best talented people around the world.
+                Tidak perlu antri panjang lagi. <br />
+                dapatkan lebih banyak makanan berat yang lezat.
               </p>
             </div>
             <form
@@ -39,7 +40,7 @@ export default async function HomePage() {
                     htmlFor="departure"
                     className="text-sm sm:text-base md:text-lg"
                   >
-                    Departure
+                    Keberangkatan
                   </label>
                   <div className="flex items-center gap-2">
                     <Image
@@ -54,7 +55,7 @@ export default async function HomePage() {
                       className="font-semibold text-sm sm:text-base md:text-lg appearance-none bg-transparent pr-6"
                     >
                       <option value="" disabled selected>
-                        Departure
+                        Kebarangkatan
                       </option>
                       {filter.map((item, index) => (
                         <option key={index} value={item.departureCity}>
@@ -70,7 +71,7 @@ export default async function HomePage() {
                     htmlFor="arrival"
                     className="text-sm sm:text-base md:text-lg"
                   >
-                    Arrival
+                    Kedatangan
                   </label>
                   <div className="flex items-center gap-2">
                     <Image
@@ -85,7 +86,7 @@ export default async function HomePage() {
                       className="font-semibold text-sm sm:text-base md:text-lg appearance-none bg-transparent pr-6"
                     >
                       <option value="" disabled selected>
-                        Arrival
+                        Kedatangan
                       </option>
                       {filter.map((item, index) => (
                         <option key={index} value={item.destinationCity}>
@@ -101,7 +102,7 @@ export default async function HomePage() {
                     htmlFor="date"
                     className="text-sm sm:text-base md:text-lg"
                   >
-                    Departure Date
+                    Tanggal Kebarangkatan
                   </label>
                   <div className="flex items-center gap-2">
                     <Image
@@ -112,6 +113,7 @@ export default async function HomePage() {
                     />
                     <input
                       type="date"
+                      defaultValue={new Date().toISOString().split("T")[0]}
                       name="date"
                       id="date"
                       className="relative font-semibold text-sm sm:text-base md:text-lg bg-transparent focus:outline-none appearance-none pr-6"
@@ -123,7 +125,7 @@ export default async function HomePage() {
                 type="submit"
                 className="font-bold text-base sm:text-lg md:text-xl leading-6 text-flysha-black text-center bg-flysha-light-purple rounded-[18px] p-3 transition-all duration-300 hover:shadow-[0_10px_20px_0_#B88DFF]"
               >
-                Explore Now
+                Jelajahi Sekarang
               </button>
             </form>
           </div>
@@ -131,14 +133,14 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* service */}
+      {/* layanan */}
       <section
         id="Services"
         className="container max-w-[1130px] mx-auto flex flex-col pt-[100px] gap-[30px]"
       >
         <h2 className="font-bold text-[32px] leading-[48px] text-center">
-          We Ensure You <br />
-          Fly With Us Forever
+          Kami Memastikan Anda <br />
+          Terbang Bersama Kami Selamanya
         </h2>
         <div className="flex justify-between">
           <div className="flex flex-col gap-[30px] w-[220px]">
@@ -151,9 +153,9 @@ export default async function HomePage() {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <p className="font-bold text-2xl leading-[36px]">Talented Crew</p>
+              <p className="font-bold text-2xl leading-[36px]">Kru Berbakat</p>
               <p className="leading-[30px] text-flysha-off-purple">
-                Our jets protected by metal that can’t be destroyed.
+                Jet kami dilindungi oleh logam yang tidak dapat dihancurkan
               </p>
             </div>
           </div>
@@ -167,7 +169,9 @@ export default async function HomePage() {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <p className="font-bold text-2xl leading-[36px]">Safe Guard</p>
+              <p className="font-bold text-2xl leading-[36px]">
+                Penjaga yang Aman
+              </p>
               <p className="leading-[30px] text-flysha-off-purple">
                 Our jets protected by metal that can’t be destroyed.
               </p>
@@ -183,7 +187,9 @@ export default async function HomePage() {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <p className="font-bold text-2xl leading-[36px]">Best Awards</p>
+              <p className="font-bold text-2xl leading-[36px]">
+                Penghargaan Terbaik
+              </p>
               <p className="leading-[30px] text-flysha-off-purple">
                 Our jets protected by metal that can’t be destroyed.
               </p>
@@ -200,7 +206,7 @@ export default async function HomePage() {
             </div>
             <div className="flex flex-col gap-1">
               <p className="font-bold text-2xl leading-[36px]">
-                Pickup at Home
+                Penjemputan di rumah
               </p>
               <p className="leading-[30px] text-flysha-off-purple">
                 Our jets protected by metal that can’t be destroyed.
@@ -209,14 +215,14 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      {/* selected */}
+      {/* paket */}
       <section
         id="Selected"
         className="container max-w-[1130px] mx-auto flex flex-col pt-[100px] gap-[30px]"
       >
         <div className="flex justify-between items-center">
           <h2 className="font-bold text-[32px] leading-[48px] text-center">
-            Best Selective
+            Selektif Terbaik
           </h2>
           <div className="flex gap-[10px]">
             <button className="flex shrink-0 w-10 h-10 items-center justify-center bg-white rounded-full">
@@ -260,8 +266,8 @@ export default async function HomePage() {
                 />
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="font-bold text-lg">First Lounge</p>
-                <p className="text-flysha-off-purple">Manhanggattan</p>
+                <p className="font-bold text-lg">Bahasa Pertama</p>
+                <p className="text-flysha-off-purple">Bandara MJK</p>
               </div>
             </div>
           </div>
@@ -286,7 +292,7 @@ export default async function HomePage() {
                 />
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="font-bold text-lg">Business First</p>
+                <p className="font-bold text-lg">Bisnis Pertama</p>
                 <p className="text-flysha-off-purple">Gulfstream 109-BB</p>
               </div>
             </div>
@@ -312,7 +318,7 @@ export default async function HomePage() {
                 />
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="font-bold text-lg">Pickup at Home</p>
+                <p className="font-bold text-lg">Penjemputan di rumah</p>
                 <p className="text-flysha-off-purple">Bentley Banta</p>
               </div>
             </div>
@@ -338,7 +344,7 @@ export default async function HomePage() {
                 />
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="font-bold text-lg">Fly Roam</p>
+                <p className="font-bold text-lg">Ruang Terbang</p>
                 <p className="text-flysha-off-purple">Capung A19-22</p>
               </div>
             </div>
@@ -352,10 +358,10 @@ export default async function HomePage() {
       >
         <div className="flex flex-col gap-[6px] items-center">
           <h2 className="font-bold text-[32px] leading-[48px] text-center">
-            Best Selective
+            Testimoni
           </h2>
           <p className="font-medium text-flysha-off-purple">
-            We gave them all the best experiences ever
+            Kami memberi mereka semua pengalaman terbaik yang pernah ada
           </p>
         </div>
         <div className="testimonial-slider w-full overflow-hidden">
@@ -363,8 +369,8 @@ export default async function HomePage() {
             <div className="animate-[slide_15s_linear_infinite] flex gap-[30px] pl-[30px] items-center h-[228px]">
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -414,17 +420,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -474,17 +478,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -534,17 +536,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -594,10 +594,8 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
@@ -605,8 +603,8 @@ export default async function HomePage() {
             <div className="animate-[slide_15s_linear_infinite] flex gap-[30px] pl-[30px] items-center h-[228px]">
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -656,17 +654,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -716,17 +712,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -776,17 +770,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -836,10 +828,8 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
@@ -847,8 +837,8 @@ export default async function HomePage() {
             <div className="animate-[slide_15s_linear_infinite] flex gap-[30px] pl-[30px] items-center h-[228px]">
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -898,17 +888,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -958,17 +946,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -1018,17 +1004,15 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
               <div className="testi-cards flex flex-col gap-[14px] h-full w-fit bg-flysha-bg-purple p-5 rounded-[20px] overflow-hidden">
                 <p className="review leading-[30px] h-[90px] w-[305px]">
-                  I thought cheaper was not good, well, I personally never had
-                  this amazing experience. Thank you!!
+                  Saya pikir yang murah itu tidak bagus, yah, saya pribadi tidak
+                  pernah punya pengalaman yang luar biasa ini.
                 </p>
                 <div className="flex">
                   <Image
@@ -1078,10 +1062,8 @@ export default async function HomePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-[2px]">
-                    <p className="font-bold">Jessi Lyio</p>
-                    <p className="text-sm text-flysha-off-purple">
-                      CPO Agolia Modd
-                    </p>
+                    <p className="font-bold">Jessica Fistika</p>
+                    <p className="text-sm text-flysha-off-purple">Influencer</p>
                   </div>
                 </div>
               </div>
@@ -1109,39 +1091,33 @@ export default async function HomePage() {
           </div>
           <div className="flex gap-[100px] z-10">
             <div className="flex flex-col gap-5">
-              <p className="font-bold text-lg">Explore</p>
+              <p className="font-bold text-lg">Telusuri</p>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Services
+                Layanan
               </Link>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Testimonials
+                Tentang
               </Link>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Pricing
-              </Link>
-              <Link
-                href=""
-                className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
-              >
-                About
+                Testimoni
               </Link>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-bold text-lg">Services</p>
+              <p className="font-bold text-lg">Layanan</p>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Pickup at Home
+                Penjemputan di Rumah
               </Link>
               <Link
                 href=""
@@ -1153,7 +1129,7 @@ export default async function HomePage() {
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Business Room
+                Ruang Bisnis
               </Link>
               <Link
                 href=""
@@ -1163,18 +1139,18 @@ export default async function HomePage() {
               </Link>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-bold text-lg">About</p>
+              <p className="font-bold text-lg">Tentang</p>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Company Profile
+                Profil Perusahaan
               </Link>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Our Investors
+                Investor Kami
               </Link>
               <Link
                 href=""
@@ -1186,11 +1162,11 @@ export default async function HomePage() {
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300"
               >
-                Careers
+                Karir
               </Link>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-bold text-lg">Connect</p>
+              <p className="font-bold text-lg">Hubungi</p>
               <Link
                 href=""
                 className="font-medium hover:font-semibold hover:text-flysha-light-purple transition-all duration-300 flex items-center gap-[6px]"
@@ -1201,7 +1177,7 @@ export default async function HomePage() {
                   src="/assets/images/icons/call.svg"
                   alt="icon"
                 />
-                +1 2208 1996
+                +628121221
               </Link>
               <Link
                 href=""
@@ -1213,7 +1189,7 @@ export default async function HomePage() {
                   src="/assets/images/icons/dribbble.svg"
                   alt="icon"
                 />
-                buildwithangga
+                Airplane
               </Link>
               <Link
                 href=""
@@ -1225,13 +1201,13 @@ export default async function HomePage() {
                   src="/assets/images/icons/sms.svg"
                   alt="icon"
                 />
-                team@bwa.com
+                flysha@gmail.com
               </Link>
             </div>
           </div>
         </div>
         <p className="mx-auto mt-[60px] text-[#A0A0AC] text-sm z-10">
-          All Rights Reserved. Copyright BuildWithAngga 2024.
+          All Rights Reserved. Copyright ©️LuckyRobert 2024.
         </p>
       </footer>
     </>

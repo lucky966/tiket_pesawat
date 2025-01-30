@@ -91,9 +91,9 @@ export default function FormFlight({
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="departureCity">Kota Keberangkatan</Label>
+          <Label htmlFor="departureCity">Negara Keberangkatan</Label>
           <Input
-            placeholder="Kota Keberangkatan..."
+            placeholder="Negara Keberangkatan..."
             name="departureCity"
             id="departureCity"
             defaultValue={defaultValues?.departureCity}
@@ -117,9 +117,9 @@ export default function FormFlight({
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="departureCityCode">Kode Kota</Label>
+          <Label htmlFor="departureCityCode">Kode Negara</Label>
           <Input
-            placeholder="Kode Kota..."
+            placeholder="Kode Negara..."
             name="departureCityCode"
             id="departureCityCode"
             defaultValue={defaultValues?.departureCityCode}
@@ -129,9 +129,9 @@ export default function FormFlight({
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="destinationCity">Kota Tujuan</Label>
+          <Label htmlFor="destinationCity">Negara Tujuan</Label>
           <Input
-            placeholder="Kota Tujuan..."
+            placeholder="Negara Tujuan..."
             name="destinationCity"
             id="destinationCity"
             defaultValue={defaultValues?.destinationCity}
@@ -155,9 +155,9 @@ export default function FormFlight({
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="destinationCityCode">Kode Kota</Label>
+          <Label htmlFor="destinationCityCode">Kode Negara</Label>
           <Input
-            placeholder="Kode Kota..."
+            placeholder="Kode Negara..."
             name="destinationCityCode"
             id="destinationCityCode"
             defaultValue={defaultValues?.destinationCityCode}

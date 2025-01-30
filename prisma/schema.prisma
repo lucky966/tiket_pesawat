@@ -20,7 +20,7 @@ model User {
 }
 
 model Session {
-  id        String   @id
+  id        String   @id @default(cuid())
   userId    String
   expiresAt DateTime
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -55,8 +55,8 @@ model FlightSeat {
   seatNumber String
   isBooked   Boolean? @default(false)
   type       TypeSeat
-  flight     Flight   @relation(fields: [flightId], references: [id])
-  tickets    Ticket?
+  flight     Flight   @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  ticket     Ticket?
 }
 
 model Ticket {
@@ -69,7 +69,7 @@ model Ticket {
   flightId      String
   seatId        String       @unique
   tokenMidtrans String?
-  customer      User         @relation(fields: [customerId], references: [id])
+  customer      User         @relation(fields: [customerId], references: [id], onDelete: Cascade)
   flight        Flight       @relation(fields: [flightId], references: [id])
   seat          FlightSeat   @relation(fields: [seatId], references: [id])
 }

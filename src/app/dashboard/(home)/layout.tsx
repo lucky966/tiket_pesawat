@@ -39,7 +39,7 @@ export default async function DashboardLayout({
         <section>
           <nav className="border-b border-muted p-5">
             <div className="flex flex-row items-center justify-beetwen">
-              <div className="font-bold text-primary">TickWat Dashboard</div>
+              {/* <div className="font-bold text-primary">TickWat Dashboard</div> */}
             </div>
           </nav>
           <section className="flex flex-row gap-5 items-start flex-nowrap">

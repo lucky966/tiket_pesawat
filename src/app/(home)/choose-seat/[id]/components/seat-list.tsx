@@ -19,7 +19,7 @@ export default function SeatList({ seats }: SeatListProps) {
     const seatD = rawState.filter((seat) => seat.seatNumber.startsWith("D"))
     return { seatA, seatB, seatC, seatD }
   }, [checkout, seats])
-  console.log(checkout)
+  // console.log(checkout)
 
   return (
     <form className="flex flex-row justify-between gap-5">
